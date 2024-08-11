@@ -92,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         controller: controller,
                         enabled: true,
                         searchEnabled: true,
+                        minSelections: 1,
                         chipDecoration: const ChipDecoration(
                           backgroundColor: Colors.yellow,
                           wrap: true,
@@ -130,10 +131,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         dropdownItemDecoration: DropdownItemDecoration(
-                          selectedIcon:
-                              const Icon(Icons.check_box, color: Colors.green),
-                          disabledIcon:
-                              Icon(Icons.lock, color: Colors.grey.shade300),
+                          selectedIcon: const Icon(Icons.check_box, color: Colors.green),
+                          disabledIcon: Icon(Icons.lock, color: Colors.grey.shade300),
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -174,19 +173,15 @@ class _MyHomePageState extends State<MyHomePage> {
                           ElevatedButton(
                             onPressed: () {
                               controller.addItems([
-                                DropdownItem(
-                                    label: 'France',
-                                    value: User(name: 'France', id: 8)),
+                                DropdownItem(label: 'France', value: User(name: 'France', id: 8)),
                               ]);
                             },
                             child: const Text('Add Items'),
                           ),
                           ElevatedButton(
                             onPressed: () {
-                              controller.selectWhere((element) =>
-                                  element.value.id == 1 ||
-                                  element.value.id == 2 ||
-                                  element.value.id == 3);
+                              controller.selectWhere(
+                                  (element) => element.value.id == 1 || element.value.id == 2 || element.value.id == 3);
                             },
                             child: const Text('Select Where'),
                           ),

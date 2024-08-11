@@ -98,6 +98,7 @@ class MultiDropdown<T extends Object> extends StatefulWidget {
     this.chipDecoration = const ChipDecoration(),
     this.searchEnabled = false,
     this.maxSelections = 0,
+    this.minSelections = 0,
     this.selectedItemBuilder,
     this.focusNode,
     this.onSelectionChange,
@@ -145,6 +146,7 @@ class MultiDropdown<T extends Object> extends StatefulWidget {
     this.chipDecoration = const ChipDecoration(),
     this.searchEnabled = false,
     this.maxSelections = 0,
+    this.minSelections = 0,
     this.selectedItemBuilder,
     this.focusNode,
     this.onSelectionChange,
@@ -194,6 +196,9 @@ class MultiDropdown<T extends Object> extends StatefulWidget {
 
   /// The maximum number of selections allowed.
   final int maxSelections;
+
+  /// The minimum number of selections required.
+  final int minSelections;
 
   /// Whether the dropdown is enabled.
   final bool enabled;
@@ -412,6 +417,7 @@ class _MultiDropdownState<T extends Object> extends State<MultiDropdown<T>> {
                       maxSelections: widget.maxSelections,
                       singleSelect: widget.singleSelect,
                       onSearchChange: _dropdownController._setSearchQuery,
+                      minSelections: widget.minSelections,
                     ),
                   ),
                 ),
