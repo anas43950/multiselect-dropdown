@@ -190,6 +190,7 @@ class FieldDecoration {
     this.padding = const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
     this.backgroundColor,
     this.showClearIcon = true,
+    this.suffixIconConstraints,
   });
 
   /// The label text to display above the dropdown field.
@@ -236,6 +237,9 @@ class FieldDecoration {
 
   /// show clear icon or not in the dropdown field
   final bool showClearIcon;
+
+  /// constraints for suffix icon
+  final BoxConstraints? suffixIconConstraints;
 }
 
 /// Configuration class for customizing the appearance of chips in the multi-select dropdown.
@@ -269,6 +273,7 @@ class ChipDecoration {
     this.labelStyle,
     this.borderRadius = const BorderRadius.all(Radius.circular(12)),
     this.wrap = true,
+    this.showDeleteIcon = true,
   });
 
   /// The icon to display for deleting a chip.
@@ -300,4 +305,7 @@ class ChipDecoration {
   /// If true, the chips will wrap to the next line when they reach the end of the row.
   /// If false, the chips will not wrap and will be displayed in a single line, scrolling horizontally if necessary.
   final bool wrap;
+
+  /// Whether to show the delete icon or not
+  final bool showDeleteIcon;
 }
